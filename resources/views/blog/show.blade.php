@@ -6,7 +6,11 @@
         <article class="single-post">
             <span class="post-category">{{ $post->category?->name }}</span>
             <h1>{{ $post->title }}</h1>
-
+            @if($post->featured_image)
+            <div class="post-featured-image">
+                <img src="{{ asset('storage/'.$post->featured_image) }}" alt="{{ $post->title }}">
+            </div>
+            @endif
             <div class="post-meta">
                 <span>By {{ $post->author?->name }}</span>
                 <span>{{ optional($post->published_at)->format('M d, Y') }}</span>

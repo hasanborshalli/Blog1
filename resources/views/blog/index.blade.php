@@ -15,6 +15,11 @@
                 <article class="post-card">
                     <div class="post-card-body">
                         <span class="post-category">{{ $post->category?->name }}</span>
+                        @if($post->featured_image)
+                        <div class="post-image">
+                            <img src="{{ asset('storage/'.$post->featured_image) }}" alt="{{ $post->title }}">
+                        </div>
+                        @endif
                         <h3>
                             <a href="{{ route('post.show', $post->slug) }}">{{ $post->title }}</a>
                         </h3>
