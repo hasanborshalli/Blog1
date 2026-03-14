@@ -21,6 +21,7 @@
                 <a href="{{ route('admin.categories.index') }}">Categories</a>
                 <a href="{{ route('admin.tags.index') }}">Tags</a>
                 <a href="{{ route('admin.comments.index') }}">Comments</a>
+                <a href="{{ route('admin.messages.index') }}">Messages</a>
                 <a href="{{ route('admin.settings.edit') }}">Settings</a>
                 <a href="{{ route('home') }}" target="_blank">View Website</a>
                 <form method="POST" action="{{ route('logout') }}">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminContactMessageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Setting;
 
@@ -72,4 +73,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 Route::resource('comments', AdminCommentController::class)->only(['index', 'show', 'update', 'destroy']);
     Route::get('/settings', [AdminSettingController::class, 'edit'])->name('settings.edit');
     Route::post('/settings', [AdminSettingController::class, 'update'])->name('settings.update');
+    Route::resource('messages', AdminContactMessageController::class)
+    ->only(['index', 'show', 'update', 'destroy']);
 });
